@@ -1,6 +1,7 @@
-Pequeño programa que resuelve "laberintos" y los muestra mediante varias ventanas; 
-una de ellas con el laberinto sin resolver y la otra  con una de las soluciones posibles. 
+Pequeño programa de resolución de laberintos.
 
-Las "x" simbolizan los obstáculos, las "o" los espacios disponibles y las "-" el camino a seguir para resolver el problema.
+El camino rojo muestra un camino explorado y el verde el camino correcto en el caso de que haya solución.
+Los aros amarillos muestran la entrada y salida.
 
-![back](https://user-images.githubusercontent.com/91496152/151714724-950f5203-f26d-4e9a-9fe0-939ff6bc7549.png)
+
+![back](https://user-images.githubusercontent.com/91496152/151850831-1ed58ef5-1315-4745-8181-2987f96b4302.png)
