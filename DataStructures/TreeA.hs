@@ -16,9 +16,6 @@ module TreeA(TreeA,
 -- Fecha: 02 / 02 / 22                                            --
 --------------------------------------------------------------------
 
-
-import DataStructures.Graphics.DrawTrees
-
 data TreeA a = EmptyA | Node a [TreeA a] deriving Show
 
 tree :: TreeA Integer
@@ -85,22 +82,4 @@ preOrderSearch (Node x ls) = x : (uniList [preOrderSearch l | l <- ls])
 
 foldA :: (a -> b -> b) -> b -> TreeA a -> b
 foldA f n t = foldr f n (preOrderSearch t)
-
-
-
-
-----------------------------Draw--------->
-instance Subtrees (TreeA a) where
-  subtrees EmptyA = []
-  subtrees (Node x ys)  = ys
-
-  isEmptyTree  = isEmpty
-
-instance (Show a) => ShowNode (TreeA a) where
-  showNode (Node x _)  = show x
-
-drawOnWith :: FilePath -> (a -> String) -> TreeA a -> IO ()
-drawOnWith file toString  = _drawOnWith file showTreeA
- where
-  showTreeA (Node x _)  = toString x
 
