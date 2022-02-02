@@ -13,8 +13,6 @@ module TreeAB(TreeAB,
 -- Fecha: 02 / 02 / 22                                            --
 --------------------------------------------------------------------
 
-import DataStructures.Graphics.DrawTrees
-
 data TreeAB a = EmptyAB | Node a (TreeAB a) (TreeAB a) deriving Show
 
 treeab :: TreeAB Integer
@@ -79,19 +77,3 @@ postOrderAB (Node x l r) = (postOrderAB l) ++ (postOrderAB r) ++ [x]
 
 foldAB :: (a -> b -> b) -> b -> TreeAB a -> b
 foldAB f z t = foldr f z (inOrderAB t)
-
-----------------------------Draw--------->
-instance Subtrees (TreeAB a) where
-  subtrees EmptyAB = []
-  subtrees (Node x l r)  = [l,r]
-
-  isEmptyTree  = isEmptyAB
-
-
-instance (Show a) => ShowNode (TreeAB a) where
-  showNode (Node x _ _)  = show x
-
-drawOnWith :: FilePath -> (a -> String) -> TreeAB a -> IO ()
-drawOnWith file toString  = _drawOnWith file showTreeA
- where
-  showTreeA (Node x _ _)  = toString x
