@@ -15,9 +15,6 @@ module BHeap(BHeap,
              insertA,
              deleteRoot) where 
 
-
-import DataStructures.Graphics.DrawTrees
-
 data BHeap a = Empty | Node a (BHeap a) (BHeap a) deriving Show
 
 --Devuelve un arbol con un único elemento
@@ -115,21 +112,4 @@ insList (x:xs) = insertA x (insList xs)
 -- (HOP y arbol binario completo)
 deleteRoot :: (Eq a, Ord a) => BHeap a -> BHeap a 
 deleteRoot (Node x l r) = insList (inOrder l ++ (inOrder r))
-
-
-
-----------------------------Draw--------->
-instance Subtrees (BHeap a) where
-  subtrees Empty = []
-  subtrees (Node x l r)  = [l,r]
-
-  isEmptyTree  = isEmpty
-
-instance (Show a) => ShowNode (BHeap a) where
-  showNode (Node x _ _)  = show x
-
-drawOnWith :: FilePath -> (a -> String) -> BHeap a -> IO ()
-drawOnWith file toString  = _drawOnWith file showTreeA
- where
-  showTreeA (Node x _ _)  = toString x
 
