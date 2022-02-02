@@ -13,7 +13,8 @@ module BHeap(BHeap,
              empty,
              atLevel,
              insertA,
-             deleteRoot) where 
+             deleteRoot,
+             getRoot) where 
 
 data BHeap a = Empty | Node a (BHeap a) (BHeap a) deriving Show
 
@@ -113,3 +114,7 @@ insList (x:xs) = insertA x (insList xs)
 deleteRoot :: (Eq a, Ord a) => BHeap a -> BHeap a 
 deleteRoot (Node x l r) = insList (inOrder l ++ (inOrder r))
 
+--Devuelve la raiz
+getRoot :: BHeap a -> a 
+getRoot empty = error "empty"
+getRoot (Node x _ _) = x
