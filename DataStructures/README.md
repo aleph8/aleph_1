@@ -29,7 +29,7 @@ TreeAB -> Árbol Binario (aridad 2)
 -------------------------------------------------------------------------------------------------------------------------
 
 <pre>
-BinaryHeap: árbol binario completo que satisface la propiedad HOP.
+BinaryHeapAleph: árbol binario completo que satisface la propiedad HOP.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/91496152/152165042-6bac903c-e166-4652-a53c-c545d0cdfd0c.svg" />
