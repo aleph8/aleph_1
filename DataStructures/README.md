@@ -40,4 +40,7 @@ HOP : la secuencia de cualquier camino desde la raíz a una hoja siempre es asce
 Árbol binario completo: todos sus niveles están completos salvo el último, en el cual todos 
 los nodos estan pegados a la izquierda
 
+Cabe destacar que los montículos se suelen implementar vía árboles binarios completos; en este caso está implementado 
+mediante un árbol binario no aumentado.
+
 </pre>
