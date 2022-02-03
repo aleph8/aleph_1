@@ -56,5 +56,6 @@ maxHeapAleph: árbol binario aumentado que satisface la propiedad HOP
 </p>
 
 Un árbol binario aumentado es similar a un árbol binario normal, solo que en cada nodo se almacena también su peso
+</pre>
 
 
