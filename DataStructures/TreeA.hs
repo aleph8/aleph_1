@@ -25,11 +25,6 @@ data TreeA a = EmptyA | Node a [TreeA a] deriving Show
 tree :: TreeA Integer
 tree = Node 5 [Node 1 [Node 4 [], Node 7 [Node 8 [],Node 5 [],Node 3 []]],Node 2 [],Node 3 []]
 
-treePath :: TreeA Char
-treePath = Node 'a' [Node 'f' [Node 'g' []]
-                , Node 'c' []
-                , Node 'b' [Node 'd' [],Node 'e' []]
-                ]
 
 empty :: TreeA a 
 empty = EmptyA
@@ -120,23 +115,4 @@ longToPathAl l = aux (h:hs) l
     (h:hs) = treeElem l
 -------------------------------------------------- Fin de los metodos para la ----
 --------------------------------------------------- longitud interna -------------
-
-
-
-
-
-----------------------------Draw--------->
-instance Subtrees (TreeA a) where
-  subtrees EmptyA = []
-  subtrees (Node x ys)  = ys
-
-  isEmptyTree  = isEmpty
-
-instance (Show a) => ShowNode (TreeA a) where
-  showNode (Node x _)  = show x
-
-drawOnWith :: FilePath -> (a -> String) -> TreeA a -> IO ()
-drawOnWith file toString  = _drawOnWith file showTreeA
- where
-  showTreeA (Node x _)  = toString x
 
