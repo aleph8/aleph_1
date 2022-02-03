@@ -41,6 +41,20 @@ HOP : la secuencia de cualquier camino desde la raíz a una hoja siempre es asce
 los nodos estan pegados a la izquierda
 
 Cabe destacar que los montículos se suelen implementar vía árboles binarios completos; en este caso está implementado 
-mediante un árbol binario no aumentado.
+mediante un árbol binario no aumentado.!
+
 
 </pre>
+
+-------------------------------------------------------------------------------------------------------------------------
+
+<pre>
+maxHeapAleph: árbol binario aumentado que satisface la propiedad HOP
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/91496152/152341904-73af841b-d892-4f9d-9e40-1941351c4ea7.svg" />
+</p>
+
+Un árbol binario aumentado es similar a un árbol binario normal, solo que en cada nodo se almacena también su peso
+
+
