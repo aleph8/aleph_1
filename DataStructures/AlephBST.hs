@@ -15,9 +15,6 @@ module AlephBST(BSTA,
                 delElem,
                 treeSort) where 
 
-import DataStructures.Graphics.DrawTrees
-
-
 data BSTA a = Empty | Node a (BSTA a) (BSTA a)
 
 empty :: BSTA a 
@@ -99,32 +96,3 @@ delElem z (Node x l r)
     |otherwise = (Node x l (delElem z r))
     where 
         m = (minElem r)
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----------------------------Draw--------->
-instance Subtrees (BSTA a) where
-  subtrees Empty = []
-  subtrees (Node x l r)  = [l,r]
-
-  isEmptyTree  = isEmpty
-
-instance (Show a) => ShowNode (BSTA a) where
-  showNode (Node x _ _)  = show x
-
-drawOnWith :: FilePath -> (a -> String) -> BSTA a -> IO ()
-drawOnWith file toString  = _drawOnWith file showTreeA
- where
-  showTreeA (Node x _ _)  = toString x
