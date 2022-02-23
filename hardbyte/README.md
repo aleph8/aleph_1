@@ -19,7 +19,7 @@ Para ejecutar hardbyte es imprescindible ejecutar el siguiente comando:
 
 ```plain
 
-#php yii serve --port=8080
+# php yii serve --port=8080
   
 ```
 
