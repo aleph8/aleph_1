@@ -15,7 +15,13 @@ features to your application.
 TESTING
 -------
 
-Para ejecutar hardbyte es imprescindible ejecutar el siguiente comando: php yii serve --port=8080
+Para ejecutar hardbyte es imprescindible ejecutar el siguiente comando: 
+
+```plain
+
+php yii serve --port=8080
+  
+```
 
 DIRECTORY STRUCTURE
 -------------------
