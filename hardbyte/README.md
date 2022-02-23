@@ -6,7 +6,7 @@
     <br>
 </p>
 
-Usada la plantilla básica ofrecida por Yii ya que era más óptimo emplear el frontend (vue) que en la plantilla advanced
+Usada la plantilla básica ofrecida por Yii ya que era más óptimo implementar el frontend (vue) que en la plantilla advanced
 
 TESTING
 -------
