@@ -5,6 +5,8 @@
  Dependiendo del rol que cumplas en la web tendrás disponible ciertos privilegios (para esto nos ayudamos de la renderización condicional):
       ----- Adminuistrador : puede acceder a gestión en el backend, siendo redirigido automáticamente
       ----- Usuario Normal : permiso estándar
+      
+ Controlamos el acceso usuario/administrador con el token almacenado en el localStorage ('ADMIN')
 -->
   <div class="usernavbar">
     <section class="hero is-white">
