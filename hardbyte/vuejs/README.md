@@ -7,7 +7,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run serve -> Frontend -> Falta la carpeta 'node_modules' para su correcto funcionamiento.
 ```
 
 ### Compiles and minifies for production
