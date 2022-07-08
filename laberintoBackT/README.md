@@ -1,7 +1,7 @@
-Pequeño programa de resolución de laberintos.
+Small program for solving mazes.
 
-El camino rojo muestra un camino explorado y el verde el camino correcto en el caso de que haya solución.
-Los aros amarillos muestran la entrada y salida.
+The red path shows an explored path and the green path shows the correct path in case there is a solution.
+The yellow rings show the entrance and exit.
 
 
 ![back](https://user-images.githubusercontent.com/91496152/151850831-1ed58ef5-1315-4745-8181-2987f96b4302.png)
