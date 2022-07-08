@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+
+import os
+import sys
+
+if len(sys.argv) != 3:
+    print("[x] Usage: default_cli_py <name_of_script> <shebang>")
+    exit(-1)
+
+if os.path.exists("./%s" % sys.argv[1]):
+    print("[x] The file exists")
+    exit(-1)
+
+pre_def ="""#!%s
+
+##########################################################################
+### aleph                                                              ###
+###--------------------------------------------------------------------###
+### Description                                                        ###
+###                                                                    ###
+###                                                                    ###
+###                                                                    ###
+###                                                                    ###
+###--------------------------------------------------------------------###
+###                                                                    ###
+##########################################################################
+
+""" % sys.argv[2]
+
+
+script = open("./%s" % sys.argv[1],"w")
+script.write(pre_def)
+script.close()
+
+os.system("chmod +x %s" % sys.argv[1])
+
+print("[0] The script has been created")
+exit(0)
