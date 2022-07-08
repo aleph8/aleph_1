@@ -5,27 +5,26 @@ import java.awt.*;
 
 /**
  * Autor : Aleph8 (GitHub)
- * Descripcion: pequeño programa que resuelve cualquier laberinto que se introduzca
+ * Descripcion: small program that solves any labyrinth you enter
  * Fecha: 30-01-2022
  */
 
 
 public class BackT_Laberinto {
 
-    //Fijamos el tamanio del tablero
+    //Set the size of the board
     final static int SIZE = 10;
     private int[][] SOLVED;
 
-    //Posicion final. La salida del laberinto
+    //Final position. The exit of the labyrinth
     private final static pos POS_FIN = new pos(1,SIZE-1);
-    //Posicion inicial. Entrada al laberinto
+    //Initial position. Entrance to the labyrinth
     private final static pos POS_INI = new pos(SIZE-2,0);
 
     /**
      *
      * @param matriz : matriz a mostrar.
-     *  El metodo es un simple recorrido mostrado por consola, usado auxiliarmente
-     *  en el desarrollo del codigo.
+     *  The method is a simple path shown by console, used auxiliary in the development of the code.
      */
 
     public static void show(int[][] matriz){
@@ -38,8 +37,7 @@ public class BackT_Laberinto {
     }
 
     /**
-     * Clase auxiliar creada para controlar el estado del backTracking asi como
-     * facilitar la siguiente posicion.
+     * Auxiliary class created to control the status of the backTracking as well as to facilitate the next position.
      */
 
     private static class pos{
@@ -52,8 +50,8 @@ public class BackT_Laberinto {
 
         /**
          *
-         * @param e: estado actual de la posicion; nos indica cual es la siguiente posicion a probar
-         * @return siguiente posicion
+         * @param e: current pos
+         * @return next pos
          */
 
         public pos next(int e){
@@ -68,8 +66,8 @@ public class BackT_Laberinto {
         }
 
         /**
-         *Definimos de nuevo tanto el metodo equals como el hashCode. De esta manera podemos
-         * comparar inequivocamente dos objetos de la clase creada
+         *We define again both the equals method and the hashCode. 
+         * In this way we can unambiguously compare two objects of the created class.
          */
 
         @Override
@@ -88,7 +86,7 @@ public class BackT_Laberinto {
     }
 
     /**
-     * @param matriz: rellenamos toda la matriz de ceros
+     * @param matriz: we fill the whole matrix with zeros
      */
 
     public static void fill(int[][] matriz){
@@ -102,10 +100,9 @@ public class BackT_Laberinto {
 
     /**
      *
-     * @param p: posicion que queremos comprobar
-     * @param mat: matriz donde comprobamos si p es igual a cero; de ser así el backTracking puede continuar
-     *           por ahi.
-     * @return true si es igual a cero; false en caso de que sea un muro o que ya este siendo recorrida
+     * @param p: position we want to check
+     * @param mat:  array where we check if p is equal to zero; if so the backTracking can continue there.
+     * @return true if equal to zero; false in case it is a wall or is already being traversed.
      */
 
     public static boolean isLegal(pos p, int[][] mat){
@@ -116,9 +113,9 @@ public class BackT_Laberinto {
 
     /**
      *
-     * @param lab : en cada llamada recursiva vamos expandiendo el arbol del backTracking
-     * @param currentP posicion que vamos a ramificar para encontrar la solucion
-     * @return true si el problema tiene solucion; false en caso contrario
+     * @param lab : in each recursive call we expand the backTracking tree
+     * @param currentP position we are going to branch to find the solution
+     * @return true if the problem is solvable; false otherwise
      */
 
     public static boolean backTrack(int[][] lab, pos currentP){
@@ -140,7 +137,7 @@ public class BackT_Laberinto {
     }
 
     /**
-     * Clase creada para mostrar por pantalla las soluciones (no consola, forma mas grafica)
+     * Class created to display the solutions on the screen (not console, more graphical way)
      */
 
 
@@ -148,10 +145,10 @@ public class BackT_Laberinto {
     private static class window extends JFrame{
 
         /**
-         * Pequenio metodo auxiliar para no repetir tanto codigo
-         * @param j etiqueta a modificar
-         * @param back color del fondo de la etiqueta
-         * @param let color de la letra
+         * A small auxiliary method to avoid repeating so much code.
+         * @param j label to be modified
+         * @param back background color of the label
+         * @param let font color
          */
 
         protected void backGround(JLabel j, Color back,Color let){
@@ -162,16 +159,16 @@ public class BackT_Laberinto {
 
         /**
          *
-         * @param f matriz a mostrar
-         * @param s titulo de la "ventana"
+         * @param f matrix to be displayed
+         * @param s title of the "window".
          */
 
         public window(int[][] f,String s){
 
             super(s);
 
-            //En caso de no haber solucion la matriz recibida sera igual a "null". Por tanto mostraremos que no hay ninguna solucion
-            //En otro caso mostramos la matriz pasada como parametro
+            //In case there is no solution the received matrix will be equal to "null". Therefore we will show that there is no solution.
+            //In another case we show the matrix passed as a parameter
 
             if(f == null){
                 setLayout(new BorderLayout());
@@ -210,7 +207,7 @@ public class BackT_Laberinto {
         fill(lab);
 
         //-----------------------------------------------------------
-        // Insertamos las posiciones que queremos que sean obstáculos asignando un "-1" en la matriz
+        // We insert the positions that we want to be obstacles by assigning a "-1" in the array
 
         lab[1][0] = -1;lab[1][1] = -1;lab[5][0] = -1;lab[5][1] = -1;lab[6][1] = -1;lab[7][1] = -1;lab[8][1] = -1;
         lab[3][1] = -1;lab[3][2]=-1;lab[3][3] = -1;lab[4][3] = -1;lab[5][3] = -1;lab[2][3] = -1;lab[1][3] = -1;
@@ -223,9 +220,9 @@ public class BackT_Laberinto {
 
 
         /*
-         * En primer lugar creamos una ventana con el contenido del problema sin resolver.
-         * Posteriormente empleando backTracking resolvemos el problema, encontrando una solucion la cual
-         * se mostrará al usuario mediante la creacion de otra ventana con el "tablero" actualizado.
+         *First we create a window with the contents of the unsolved problem.
+         * Then using backTracking we solve the problem, finding a solution which will be shown to the user by creating another window with the updated "dashboard".
+         *  will be shown to the user by creating another window with the updated "dashboard".
          */
 
         window p = new window(lab,"Unsolved Problem");
