@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+
+########################################################
+# aleph8                                               #
+#------------------------------------------------------#
+# Universal Caesar Encryption and Decryption           #
+#------------------------------------------------------#
+#                                                      #
+########################################################
+
+def encryption():
+
+  text=input("Insert the text: ")
+  cipher=int(input("Insert the displacement: "))
+  result=""
+  # ord("A") = 65, ord("Z") = 90, ord("a") = 97, ord("z") = 122
+  # ord(i) => "Given a string representing one Unicode character, return an integer representing the Unicode code"
+  # chr(i) => "Return the string representing a character whose Unicode code point is the integer i"
+
+  for i in text:
+    tmp=ord(i)
+    if ( tmp >= 65 and tmp <= 90 ) or ( tmp >= 97 and tmp <= 122 ):
+      if ( tmp >= 65 and tmp <= 90 ):
+        result+=chr((tmp-65+cipher)%26+65)
+      else:
+        result+=chr((tmp-97+cipher)%26+97)
+    else:
+      print("ERROR: INVALID CHARACTER")
+
+  print(result)
+
+def decryption(n,text):
+
+  result=""
+
+  for i in text:
+    tmp=ord(i)
+    if ( tmp >= 65 and tmp <= 90 ) or ( tmp >= 97 and tmp <= 122 ):
+      if ( tmp >= 65 and tmp <= 90 ):
+        result+=chr((tmp-65-n)%26+65)
+      else:
+        result+=chr((tmp-97-n)%26+97)
+    else:
+      print("ERROR: INVALID CHARACTER")
+
+  print("Caesar(%d):%s\n" % (n,result))
+
+mode=int(input("""OPTIONS
+
+\t0)Encryption
+\t1)Decryption
+
+Choose one of them (0 or 1): """))
+
+if mode == 0:
+  encryption()
+elif mode == 1:
+  text=input("Insert the text: ")
+  yn=input("Do you know the displacement?(y/n): ")
+  if yn == "y":
+    cipher=int(input("Insert the displacement: "))
+    decryption(cipher,text)
+  elif yn == "n":
+    for i in range(27):
+      decryption(i,text)
+  else:
+    print("[x]Invalid option!")
+    exit(255)
+else:
+  print("[x]Invalid option!")
+  exit(255)
