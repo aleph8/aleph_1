@@ -3,12 +3,12 @@
 ########################################################
 # aleph8                                               #
 #------------------------------------------------------#
-# Universal Caesar Encryption and Decryption           #
+# Universal Caesar Cipher and Decipher                 #
 #------------------------------------------------------#
 #                                                      #
 ########################################################
 
-def encryption():
+def cipher():
 
   text=input("Insert the text: ")
   cipher=int(input("Insert the displacement: "))
@@ -29,7 +29,7 @@ def encryption():
 
   print(result)
 
-def decryption(n,text):
+def decipher(n,text):
 
   result=""
 
@@ -47,22 +47,22 @@ def decryption(n,text):
 
 mode=int(input("""OPTIONS
 
-\t0)Encryption
-\t1)Decryption
+\t0)Cipher
+\t1)Decipher
 
 Choose one of them (0 or 1): """))
 
 if mode == 0:
-  encryption()
+  cipher()
 elif mode == 1:
   text=input("Insert the text: ")
   yn=input("Do you know the displacement?(y/n): ")
   if yn == "y":
-    cipher=int(input("Insert the displacement: "))
-    decryption(cipher,text)
+    ciphern=int(input("Insert the displacement: "))
+    decipher(ciphern,text)
   elif yn == "n":
     for i in range(27):
-      decryption(i,text)
+      decipher(i,text)
   else:
     print("[x]Invalid option!")
     exit(255)
