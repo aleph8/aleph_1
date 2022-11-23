@@ -1,0 +1,27 @@
+#!/bin/bash
+
+##
+## Author: Aleph8
+##
+## Simple bash script in order to extract the open ports from nmap -oG format ( and copy them in clipboard )
+##
+## For example (using TCP port scan by default, -sU for UDP):
+##
+## nmap -p- --open -T5 -n <ip> -oG openTCPports
+## ./grePorts
+## [!] Open ports: <port1>,<port2>...<portN>
+##
+
+
+if [ -f openTCPports ]; then
+
+  ports=$(cat openTCPports | grep -oP Ports:.* \
+  | grep -oP [0-9].*/ | grep -oP [0-9,] | \
+  tr -d "\n")
+
+  echo "[!] Open ports: $ports"
+  echo -n $ports | xclip -sel clip
+else
+  echo "[x] The file 'openTCPports' dont exist"
+  exit 1
+fi
