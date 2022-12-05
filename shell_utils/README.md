@@ -6,4 +6,11 @@
 
 ### :heavy_plus_sign: Content
 
-:page_facing_up: **Scripts**  
+:page_facing_up: **Scripts**
+
++ default_cli_py => Automation of the creation of a cli script given the name and she-bang
++ grub_selector => script in order to select the next OS to boot via cli
++ progress.sh => A set of functions to make the waiting process more visible
+  + "Upper" <p align="center"> <img src="https://raw.githubusercontent.com/aleph8/aleph_1/main/graphics/upper.gif"> </p>
++ repeatPasswords => very simple script used for testing in the small ![Digital Key Project](https://www.alejandrogp.com/electronics/digital-keythe-good-side-of-rubber-ducky)
++ shell_lock => Lock bash; it will ask for a pin to access the console.
