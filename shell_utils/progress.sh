@@ -12,10 +12,12 @@
 ###                                                                    ###
 ##########################################################################
 
+logpath="/dev/null"
+
 slash(){
   tput civis
   stty -echo
-  $1 & pid=$(echo $!)
+  $1 &> $logpath  & pid=$(echo $!)
   #echo $pid
   chars="\ | / -"
   num=$((${#2}+3))
@@ -41,7 +43,7 @@ upper(){
 
   tput civis
   stty -echo
-  $1 & pid=$(echo $!)
+  $1 &> $logpath & pid=$(echo $!)
   #echo $pid
   num=$((${#2}+3))
   reload=$(printf '\\b%.0s' $(seq 1 $num))
