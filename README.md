@@ -24,6 +24,8 @@ In this repository you will be able to find different things that I am making ab
 
 + DataStructures => Haskell implementations of various data structures of interest, such as the Binary Search Tree (BST)
 
++ Echo => Echo is a voice assistant programmed in Python and intended for Linux; to run it on Windows you would have to make a couple of changes. 
+
 + digital_key => Code for the creation of a physical digital keychain with the use of a small development board, as well as its housing for printing. For more information => https://www.alejandrogp.com/
 
 + laberintoBackT => Small program written in Java for solving mazes, i.e. finding the path given a start and an exit.
