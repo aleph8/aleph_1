@@ -13,5 +13,5 @@
 + linux_chroot_shell => Automated the chroot process.
 + progress.sh => A set of functions to make the waiting (don't show stderr and stdout) process more visible
   + "Upper" <p align="center"> <img src="https://raw.githubusercontent.com/aleph8/aleph_1/main/graphics/upper.gif"> </p>
-+ repeatPasswords => very simple script used for testing in the small ![Digital Key Project](https://www.alejandrogp.com/electronics/digital-keythe-good-side-of-rubber-ducky)
++ repeatPasswords => very simple script used for testing in the small [Digital Key Project](https://www.alejandrogp.com/electronics/digital-keythe-good-side-of-rubber-ducky)
 + shell_lock => Lock bash; it will ask for a pin to access the console.
