@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#######################################################################################
+## Aleph8									     ##
+## --------------------------------------------------------------------------------- ##
+##                                                                                   ##
+## Automated the chroot process by mounting the filesystems proc sys and dev         ##
+## (the last one linked to our current OS).                                          ##
+##                                                                                   ##
+## Once the chroot session is finished, the used disk is unmounted.                  ##
+##                                                                                   ##
+##                                                                                   ##
+##                                                                                   ##
+## --------------------------------------------------------------------------------- ##
+##                                                                                   ##
+#######################################################################################
+
+if [[ $UID != 0 ]] || [[ $# != 1 ]]; then
+  echo "[x] (Must be superuser!) Usage => $0 <path_to_mounted_linux_filesystem>"
+  exit 1
+fi
+
+cd /mnt
+mount -t proc proc $1/proc
+mount -t sysfs sys $1/sys
+mount -o bind /dev $1/dev
+
+chroot $1 /bin/bash
+
+umount $1/proc
+umount $1/sys
+umount -l $1
