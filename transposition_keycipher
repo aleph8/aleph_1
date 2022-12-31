@@ -1,0 +1,37 @@
+#!/bin/env python3
+
+##########################################################################
+### aleph                                                              ###
+###--------------------------------------------------------------------###
+### Description                                                        ###
+###                                                                    ###
+### Simple script in order to apply the transposition cipher           ###
+### with key                                                           ###
+###                                                                    ###
+###--------------------------------------------------------------------###
+###                                                                    ###
+##########################################################################
+
+import re
+
+key = input("[>] Select a number for the key (0-99) : ")
+
+if not re.match("^[0-9]{1,2}$",key):
+  print("[x] ERROR: WRONG VALUE")
+  exit(1)
+
+key = int(key)
+
+plaintext = input("[>] Write the text to cipher: ")
+plaintext = re.sub("[,. ¿?!¡]","",plaintext)
+
+cipher=""
+lenght = len(plaintext)
+
+for iter in range(key):
+  sentinel = iter
+  while sentinel < lenght:
+    cipher = cipher + plaintext[sentinel]
+    sentinel += key
+
+print(cipher)
